@@ -23,6 +23,11 @@ COPY config/flume-env.sh /opt/flume/conf/flume-env.sh
 COPY agent/flume-ripple-flow-agent.properties  /opt/flume/agent/flume-ripple-flow-agent.properties
 COPY agent/flume-global-agent.properties  /opt/flume/agent/flume-global-agent.properties
 
+#Temporary solution since agent configurations do not load env variables
+
+sed -i  -e "s/{ES_PATH}/"${ELASTICSEARCH_9300_SERVICE_HOST}"/g" /opt/flume/agent/flume-ripple-flow-agent.properties
+sed -i  -e "s/{ES_PATH}/"${ELASTICSEARCH_9300_SERVICE_HOST}"/g" /opt/flume/agent/flume-global-agent.properties
+
 #Custom script to run agent.
 COPY bin/run-agents.sh /opt/run-agents.sh
 RUN chmod +x /opt/run-agents.sh
