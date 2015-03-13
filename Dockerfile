@@ -26,7 +26,7 @@ COPY agent/flume-global-agent.properties  /opt/flume/agent/flume-global-agent.pr
 #Custom script to run agent.
 COPY bin/run-agents.sh /opt/run-agents.sh
 RUN chmod +x /opt/run-agents.sh
-RUN mkdir -p /var/log/flume
+
 
 #Install rsyslog centralized syslog server
 RUN apt-get update -q
@@ -58,5 +58,3 @@ VOLUME /var/flume/logs
 
 # default command
 CMD ["supervisord", "-c", "/etc/supervisor.conf"]
-
-#CMD /usr/sbin/rsyslogd -n -f /etc/rsyslog.conf
