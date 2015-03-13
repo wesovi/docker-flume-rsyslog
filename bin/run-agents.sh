@@ -1,4 +1,8 @@
 #!/bin/bash
+
+sed -i  -e "s/{ES_PATH}/"${ELASTICSEARCH_9300_SERVICE_HOST}"/g" /opt/flume/agent/flume-ripple-flow-agent.properties
+sed -i  -e "s/{ES_PATH}/"${ELASTICSEARCH_9300_SERVICE_HOST}"/g" /opt/flume/agent/flume-global-agent.properties
+
 /opt/flume/bin/flume-ng agent --conf /opt/flume/conf \
         --conf-file /opt/flume/agent/flume-global-agent.properties \
         -Dflume.root.logger=DEBUG,LOGFILE \
