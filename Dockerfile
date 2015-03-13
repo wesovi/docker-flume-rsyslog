@@ -55,6 +55,7 @@ COPY config/supervisor.conf /etc/supervisor.conf
 
 EXPOSE 10514
 EXPOSE 1514
+VOLUME /opt/flume/agent
 VOLUME /dev
 VOLUME /var/log
 VOLUME /var/flume/logs
