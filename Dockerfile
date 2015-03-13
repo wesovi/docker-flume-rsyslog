@@ -19,6 +19,7 @@ RUN cd /tmp && unzip /tmp/lucene-$LUCENE_VERSION.zip  && mv /tmp/lucene-$LUCENE_
 ADD http://fossies.org/linux/elasticsearch/lib/elasticsearch-$ES_VERSION.jar /opt/flume/lib/elasticsearch-$ES_VERSION.jar
 
 #Copying resources
+RUN mkdir -p /opt/flume/agent
 COPY config/flume-env.sh /opt/flume/conf/flume-env.sh
 COPY agent/flume-ripple-flow-agent.properties  /opt/flume/agent/flume-ripple-flow-agent.properties
 COPY agent/flume-global-agent.properties  /opt/flume/agent/flume-global-agent.properties
