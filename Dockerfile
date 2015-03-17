@@ -28,6 +28,7 @@ RUN mkdir -p /opt/flume/agent
 COPY config/flume-env.sh /opt/flume/conf/flume-env.sh
 COPY agent/flume-ripple-flow-agent.properties  /opt/flume/agent/flume-ripple-flow-agent.properties
 COPY agent/flume-global-agent.properties  /opt/flume/agent/flume-global-agent.properties
+COPY config/morphline.conf  /opt/flume/conf/morphline.conf
 
 
 #Temporary solution since agent configurations do not load env variables
