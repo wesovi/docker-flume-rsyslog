@@ -16,7 +16,7 @@ ADD http://www.eu.apache.org/dist/lucene/java/$LUCENE_VERSION/lucene-$LUCENE_VER
 RUN cd /tmp && unzip /tmp/lucene-$LUCENE_VERSION.zip  && mv /tmp/lucene-$LUCENE_VERSION/**/*.jar /opt/flume/lib/
 
 
-ADD http://fossies.org/linux/elasticsearch/lib/elasticsearch-$ES_VERSION.jar /opt/flume/lib/elasticsearch-$ES_VERSION.jar
+ADD http://jcenter.bintray.com/org/elasticsearch/elasticsearch/$ES_VERSION/elasticsearch-$ES_VERSION.jar /opt/flume/lib/elasticsearch-$ES_VERSION.jar
 ADD http://central.maven.org/maven2/org/kitesdk/kite-morphlines-core/1.0.0/kite-morphlines-core-1.0.0.jar /opt/flume/lib/kite-morphlines-core-1.0.0.jar
 ADD http://central.maven.org/maven2/com/codahale/metrics/metrics-core/3.0.2/metrics-core-3.0.2.jar /opt/flume/lib/metrics-core-3.0.2.jar
 ADD http://central.maven.org/maven2/com/codahale/metrics/metrics-healthchecks/3.0.2/metrics-healthchecks-3.0.2.jar /opt/flume/lib/metrics-healthchecks-3.0.2.jar
